@@ -24,7 +24,7 @@ const Header = () => {
   return (
     <div className="w-full h-16 flex justify-between py-4 px-6 border-gray-200 border-b-2 font-semibold">
       <div className="flex">
-        <Link to="/">Deep Style</Link>
+        <Link to="/">Omni Blog</Link>
       </div>
       <div className="flex justify-center h-full gap-4 px-2 rounded-md">
         <p>New Arrivals</p>

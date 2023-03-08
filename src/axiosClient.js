@@ -60,10 +60,10 @@ axiosClient.interceptors.response.use(
             id: "sessionTimeOut",
           });
           // Logging out the user by removing all the tokens from local
-        //   localStorage.removeItem("accessToken");
-        //   localStorage.removeItem("refreshToken");
+          localStorage.removeItem("accessToken");
+          localStorage.removeItem("refreshToken");
           // Redirecting the user to the landing page
-        //   window.location.href = window.location.origin;
+          window.location.href = window.location.origin;
           return Promise.reject(_error);
         }
       }
