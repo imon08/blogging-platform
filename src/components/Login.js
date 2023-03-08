@@ -2,12 +2,14 @@ import axios from "axios";
 import React, { useState } from "react";
 import { toast } from "react-hot-toast";
 import { Link, useNavigate } from "react-router-dom";
+import { useUserContext } from "../context/UserContext";
 import InputField from "./InputField";
 
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
+  const [user, setUser] = useUserContext();
 
   const handleChange = (textValue, key) => {
     if (key === "email") setEmail(textValue);
@@ -30,6 +32,8 @@ const Login = () => {
       .then((res) => {
         toast.success("Login Successfull!!");
         console.log(res.data);
+
+        setUser(res.data.data.user)
 
         localStorage.setItem("accessToken", res.data.data["access-token"]);
         localStorage.setItem("refreshToken", res.data.data["refresh-token"]);
