@@ -4,11 +4,13 @@ import Footer from "./components/Footer";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Login from "./components/Login";
 import Signup from "./components/Signup";
+import { Toaster } from "react-hot-toast";
 
 function App() {
   return (
     <div className="App">
       <Router>
+        <Toaster />
         <Header />
         <Routes>
           <Route path="/signup" element={<Signup />} />
