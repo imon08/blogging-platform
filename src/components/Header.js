@@ -26,11 +26,20 @@ const Header = () => {
       <div className="flex">
         <Link to="/">Omni Blog</Link>
       </div>
-      <div className="flex justify-center h-full gap-4 px-2 rounded-md">
-        <p>New Arrivals</p>
-        <p>Shop</p>
-        <p>Beauty</p>
-        <p>Journal</p>
+      <div>
+        {user ? (
+          <div className="flex justify-center h-full gap-4 px-2 rounded-md">
+            <Link to="/newblog"><p>Write new Blog</p></Link>        
+            <p>Journal</p>
+          </div>
+        ) : (
+          <div className="flex justify-center h-full gap-4 px-2 rounded-md">
+            <p>New Arrivals</p>
+            <p>Shop</p>
+            <p>Beauty</p>
+            <p>Journal</p>
+          </div>
+        )}
       </div>
       <div className="flex justify-between gap-4">
         {user ? (

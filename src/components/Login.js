@@ -39,7 +39,7 @@ const Login = () => {
         localStorage.setItem("refreshToken", res.data.data["refresh-token"]);
         localStorage.setItem("userData", JSON.stringify(res.data.data["user"]));
 
-        navigate("/"); 
+        navigate("/blogs"); 
       })
       .catch((err) => {
         toast.error("Login Failed");
